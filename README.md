@@ -6,13 +6,13 @@ The issue with the classification of bicycle-only infrastructure, as seen in the
 
 ## Method
 
-OSM provides some quite good attributes for features representing the traffic infrastructure. These features with attributes can be collected and called with Overpass Turbo. I will fous on these four attributes:
+OSM provides some quite good attributes for features representing the traffic infrastructure. These features with attributes can be collected and called with Overpass Turbo. I will focus on these four attributes:
 * Surface of ways
 * Road classification (e.g. cycle tracks, residential streets)
 * Maximum speed
 * Smoothness
   
-They are not too vague and are quite meaningful and popular among OSM editors. The problem arises if some attributes are missing. In that case, I have to rely on default values. However, this is also problematic because missing tags could misrepresent the current situation on the ground. For a more advanced approach to deal with default values, see, for example: https://github.com/SupaplexOSM/OSM-Cycling-Quality-Index.
+They are not too vague and are quite meaningful and popular among OSM editors. The problem arises if some attributes are missing (surface, maximum speed and smoothness are only optional attributes in OSM). In that case, I have to rely on default values. However, this is also problematic because missing tags could misrepresent the current situation on the ground. For a more advanced approach to deal with default values, see, for example: https://github.com/SupaplexOSM/OSM-Cycling-Quality-Index.
 
 Next, each of the four attributes is given a score. Each attribute type can gain a maximum of 10 points, so the total possible score is 40. I take a very simple heuristic approach, assigning fixed points to each value based on how important this property is for using it comfortably might be. The advantage of this approach is, that it represents quite good the feeling of using infrastructure with this certain property. On the other hand, this score may be somewhat subjective.
 
@@ -68,7 +68,9 @@ Finally, I am calculating four stress level categories with equal intervals.
 
 The final classification indicates where cycling is most comfortable: on smooth cycleways and calm residential streets. However, as can be seen on the output map, missing attributes are a real problem. In this example, there are many service road features that often lack surface, smoothness and maximum speed values. Setting default values for these features is unlikely to accurately represent the situation because service roads vary considerably in quality (somtimes they are paved, sometimes not etc.). Another issue is the very fine-grained but complex access attributes in OSM; at the end you can't always tell which are usable by bikes.
 
-So using four attributes to assess bikeability is a good approach for an initial overview. To achieve better results, a more sophisticated default value scoring system could be implemented, or missing values could be added to OSM. For more detailed studies on bikeability or stress level classification, see:
+So using four attributes to assess bikeability is a good approach for an initial overview. To achieve better results, a more sophisticated default value scoring system could be implemented. In addition, missing values could be added to OSM systematically to create meaningfull bikeabilty maps for cities. Surface status can added often quite easily with optical satellite images; maxspeed and smothness with street imagery. 
+
+For more detailed studies on bikeability or stress level classification, see:
 * Wysling, Laura/Purves, Ross S. (2022). Where to improve cycling infrastructure? Assessing bicycle suitability and bikeability with open data in the city of Paris. Transportation Research Interdisciplinary Perspectives 15, 100648.
 https://doi.org/10.1016/j.trip.2022.100648.
 * Schmid-Querg, Jonas/Keler, Andreas/Grigoropoulos, Georgios (2021). The Munich. Bikeability Index: A Practical Approach for Measuring Urban Bikeability. Sustainability 13 (1), 428. https://doi.org/10.3390/su13010428. Schmid-Querg et al.

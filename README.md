@@ -14,7 +14,7 @@ OSM provides some quite good attributes for features representing the traffic in
   
 They are not too vague and are quite meaningful and popular among OSM editors. The problem arises if some attributes are missing. In that case, I have to rely on default values. However, this is also problematic because missing tags could misrepresent the current situation on the ground. For a more advanced approach to deal with default values, see, for example: https://github.com/SupaplexOSM/OSM-Cycling-Quality-Index.
 
-Next, each of the four attributes is given a score. Each attribute type can gain a maximum of 10 points, so the total possible score is 40. I take a very simple heuristic approach, assigning fixed points to each value based on how important this property is for using it comfortably might be. The advantage of this approach is, that it represents quite good the feeling of using infrastructure with this certain property. On the other side this score might be to a certain degree subjective biased.
+Next, each of the four attributes is given a score. Each attribute type can gain a maximum of 10 points, so the total possible score is 40. I take a very simple heuristic approach, assigning fixed points to each value based on how important this property is for using it comfortably might be. The advantage of this approach is, that it represents quite good the feeling of using infrastructure with this certain property. On the other hand, this score may be somewhat subjective.
 
 | category | tag | value (1–10) |
 |---|---|---:|
